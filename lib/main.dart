@@ -43,7 +43,7 @@ class WelcomeScreen extends StatelessWidget {
               height: 12,
             ),
             Container(
-              width: MediaQuery.of(context).size.width * .93,
+              width: MediaQuery.of(context).size.width * 0.8,
               height: 55,
               child: FlatButton(
                 shape: RoundedRectangleBorder(
@@ -71,7 +71,7 @@ class WelcomeScreen extends StatelessWidget {
               height: 12,
             ),
             Container(
-              width: MediaQuery.of(context).size.width * .93,
+              width: MediaQuery.of(context).size.width * 0.8,
               height: 55,
               child: OutlineButton(
                 borderSide: BorderSide(color: Colors.white),
