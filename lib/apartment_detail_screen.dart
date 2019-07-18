@@ -4,66 +4,67 @@ import './bottom_nav_bar.dart';
 import './experiences_screen.dart';
 
 class ApartmentDetailScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: Column(
-          children: <Widget>[
-            Container(
-              child: Stack(
-                children: <Widget>[
-                  Container(
-                    height: 300,
-                    decoration: BoxDecoration(
-                      image: new DecorationImage(
-                        image: ExactAssetImage('assets/images/img5.jpg'),
-                        fit: BoxFit.fitHeight,
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                      child: Container(
-                          padding: EdgeInsets.only(left: 12, top: 38),
-                          child: GestureDetector(
-                            onTap: () {
-                              print('jhjhjhjh');
-                              Navigator.pop(context);
-                            },
-                            child: Icon(
-                              Icons.navigate_before,
-                              color: Colors.white,
-                              size: 34,
-                            ),
-                          ))),
-                ],
+  Widget mySizeBox(double doubleSize) {
+    return SizedBox(
+      width: doubleSize,
+    );
+  }
+
+  Widget showImage(BuildContext context) {
+    return Container(
+      child: Stack(
+        children: <Widget>[
+          Container(
+            height: 200,
+            decoration: BoxDecoration(
+              image: new DecorationImage(
+                image: ExactAssetImage('assets/images/img5.jpg'),
+                fit: BoxFit.cover,
               ),
             ),
-            SizedBox(
-              height: 8,
-            ),
-            Container(
-                width: MediaQuery.of(context).size.width * 0.98,
-                padding: EdgeInsets.only(left: 8),
-                alignment: Alignment.topLeft,
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                              ExperiencesScreen()),
-                    );
-                  },
-                  child: Text(
-                    "Centric studio with roof\ntop terrace ",
-                    style:
-                        TextStyle(fontSize: 28, fontFamily: 'OpenSansRegular'),
-                  ),
-                )),
-            SizedBox(
-              height: 12,
-            ),
-            Container(
+          ),
+          Positioned(
+              child: Container(
+                  padding: EdgeInsets.only(left: 12, top: 38),
+                  child: GestureDetector(
+                    onTap: () {
+                      print('You Click');
+                      // Navigator.pop(context);
+                    },
+                    child: Icon(
+                      Icons.navigate_before,
+                      color: Colors.white,
+                      size: 34,
+                    ),
+                  ))),
+        ],
+      ),
+    );
+  }
+
+  Widget headTitle(BuildContext context){
+    return Container(
+              width: MediaQuery.of(context).size.width * 0.98,
+              padding: EdgeInsets.only(left: 8),
+              alignment: Alignment.topLeft,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => ExperiencesScreen()),
+                  );
+                },
+                child: Text(
+                  "Centric studio with roof\ntop terrace ",
+                  style: TextStyle(fontSize: 28, fontFamily: 'OpenSansRegular'),
+                ),
+              ),
+            );
+  }
+
+  Widget subTitle(BuildContext context){
+    return Container(
               width: MediaQuery.of(context).size.width * 0.98,
               padding: EdgeInsets.only(left: 8),
               alignment: Alignment.topLeft,
@@ -85,10 +86,19 @@ class ApartmentDetailScreen extends StatelessWidget {
                   )
                 ],
               ),
-            ),
-            SizedBox(
-              height: 8,
-            ),
+            );
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Column(
+          children: <Widget>[
+            showImage(context),
+            mySizeBox(8.0),
+            headTitle(context),
+            mySizeBox(12.0),
+            subTitle(context),
+            mySizeBox(8.0),
             Container(
               alignment: Alignment.topLeft,
               padding: EdgeInsets.only(left: 12),
@@ -100,9 +110,7 @@ class ApartmentDetailScreen extends StatelessWidget {
                     color: Colors.grey),
               ),
             ),
-            SizedBox(
-              height: 6,
-            ),
+            mySizeBox(6.0),
             Container(
               alignment: Alignment.topLeft,
               padding: EdgeInsets.only(left: 12),
@@ -115,7 +123,7 @@ class ApartmentDetailScreen extends StatelessWidget {
                     fontWeight: FontWeight.w400),
               ),
             ),
-            SizedBox(height: 6),
+            mySizeBox(6.0),
             Row(children: [
               Container(
                 padding: EdgeInsets.only(left: 8),
@@ -140,9 +148,7 @@ class ApartmentDetailScreen extends StatelessWidget {
                     fontWeight: FontWeight.w400),
               )),
             ]),
-            SizedBox(
-              height: 22,
-            ),
+            mySizeBox(22.0),
             Container(
               width: MediaQuery.of(context).size.width * 0.94,
               height: 2,

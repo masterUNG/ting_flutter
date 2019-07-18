@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ting_flutter/apartment_detail_screen.dart';
 import './login_screen.dart';
 import './signup_screen.dart';
 
@@ -13,7 +14,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: WelcomeScreen(),
+      home: ApartmentDetailScreen(),
     );
   }
 }
