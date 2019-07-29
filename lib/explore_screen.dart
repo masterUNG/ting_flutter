@@ -31,6 +31,24 @@ class ExploreScreen extends StatelessWidget {
     );
   }
 
+  Widget showTextZurich() {
+    return Container(
+      alignment: Alignment.centerLeft,
+      margin: EdgeInsets.only(left: 12),
+      child: Text(
+        'Zurich',
+        style: TextStyle(
+            fontFamily: 'OpenSansRegular',
+            fontSize: 32,
+            fontWeight: FontWeight.w500),
+      ),
+    );
+  }
+
+  // Widget showImageZurich(){
+  //   return ;
+  // }
+
   Scaffold buildBottomNavBar(context) {
     var apartmentInfo = Stack(
       children: <Widget>[
@@ -104,20 +122,8 @@ class ExploreScreen extends StatelessWidget {
                 children: <Widget>[
                   showExploreTitle(),
                   bannerList(),
-                  Container(
-                    alignment: Alignment.centerLeft,
-                    margin: EdgeInsets.only(left: 12),
-                    child: Text(
-                      'Zurich',
-                      style: TextStyle(
-                          fontFamily: 'OpenSansRegular',
-                          fontSize: 32,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 12,
-                  ),
+                  showTextZurich(),
+                  mySizeBox(12.0),
                   Column(
                     children: <Widget>[
                       Container(
@@ -125,14 +131,10 @@ class ExploreScreen extends StatelessWidget {
                         margin: EdgeInsets.only(left: 12),
                         child: apartmentInfo,
                       ),
-                      SizedBox(
-                        height: 6,
-                      ),
+                      mySizeBox(6.0),
                       apartmentTextOne,
                       perPersonText,
-                      SizedBox(
-                        height: 80,
-                      ),
+                      mySizeBox(80.0),
                       Container(
                         padding: EdgeInsets.only(left: 12),
                         alignment: Alignment.topLeft,
@@ -145,17 +147,13 @@ class ExploreScreen extends StatelessWidget {
                               fontWeight: FontWeight.w100),
                         ),
                       ),
-                      SizedBox(
-                        height: 18,
-                      ),
+                      mySizeBox(18.0),
                       Container(
                         alignment: Alignment.topLeft,
                         margin: EdgeInsets.only(left: 12),
                         child: apartmentInfo,
                       ),
-                      SizedBox(
-                        height: 6,
-                      ),
+                      mySizeBox(6.0),
                       apartmentTextOne,
                       perPersonText,
                     ],
